@@ -33,6 +33,18 @@
         </div>
       )
 
+      const Counter = ({
+        onIncrement,
+        onDecrement,
+        value
+      }) => (
+        <div>
+          <OperationButton onClickEvent={onIncrement} label="Increment" />
+          <h1 className="slds-text-heading--large">{value}</h1>
+          <OperationButton onClickEvent={onDecrement} label="Decrement" />
+        </div>
+      )
+
       class App extends React.Component {
         state = {
           value: 0
@@ -53,9 +65,16 @@
           const value = this.state.value
           return (
             <div style={{ textAlign: 'center' }}>
-              <OperationButton onClickEvent={this._onIncrement.bind(this)} label="Increment" />
-              <h1 className="slds-text-heading--large">{value}</h1>
-              <OperationButton onClickEvent={this._onDecrement.bind(this)} label="Decrement" />
+              <h1 className="slds-text-heading--large slds-p-top_large">
+                This is an Electron App with an<br/>
+                Embedded React counter component<br/>
+                using Salesforce Lightning Design System<br/>
+              </h1>
+              <div className="slds-p-top_large"></div>
+              <Counter 
+                onIncrement={this._onIncrement.bind(this)} 
+                onDecrement={this._onDecrement.bind(this)}
+                value={value} />
             </div>
           )
         }
