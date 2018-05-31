@@ -33,22 +33,11 @@
         </div>
       )
 
-      const Counter = ({
-        onIncrement,
-        onDecrement,
-        value
-      }) => (
-        <div>
-          <OperationButton onClickEvent={onIncrement} label="Increment" />
-          <h1 className="slds-text-heading--large">{value}</h1>
-          <OperationButton onClickEvent={onDecrement} label="Decrement" />
-        </div>
-      )
-
-      class App extends React.Component {
+      class Counter extends React.Component {
         state = {
           value: 0
         }
+
         _onIncrement() {
           this.setState({
             value: this.state.value + 1
@@ -61,8 +50,36 @@
           })
         }
 
+        componentDidMount() {
+          this.setState({
+            value: this.props.initialValue
+          })
+        }
+
         render() {
-          const value = this.state.value
+          const { value } = this.state
+          
+          return (
+            <div style={{ display: 'inline-block' }}>
+              <OperationButton onClickEvent={this._onIncrement.bind(this)} label="Increment" />
+              <h1 className="slds-text-heading--large">{value}</h1>
+              <OperationButton onClickEvent={this._onDecrement.bind(this)} label="Decrement" />
+            </div>
+          )
+        }
+      }
+
+      class App extends React.Component {
+        state = {
+          initialValues: {
+            one: 1,
+            two: 2,
+            three: 3
+          }
+        }
+
+        render() {
+          const { initialValues } = this.state
           return (
             <div style={{ textAlign: 'center' }}>
               <h1 className="slds-text-heading--large slds-p-top_large">
@@ -71,10 +88,9 @@
                 using Salesforce Lightning Design System<br/>
               </h1>
               <div className="slds-p-top_large"></div>
-              <Counter 
-                onIncrement={this._onIncrement.bind(this)} 
-                onDecrement={this._onDecrement.bind(this)}
-                value={value} />
+              <Counter initialValue={initialValues.one} />
+              <Counter initialValue={initialValues.two} />
+              <Counter initialValue={initialValues.three} />
             </div>
           )
         }
