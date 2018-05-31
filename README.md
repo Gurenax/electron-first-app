@@ -1,5 +1,10 @@
-# Electron
-- Trying out electron for the first time.
+<h1 align="center">Electron</h1>
+<p align="center">Trying out electron for the first time.</p>
+<p align="center">
+  <img src= "/docs/images/screenshot.png" />
+</p>
+
+
 
 ## What's going on
 - Created an Electron App which was initially a Hello World App
