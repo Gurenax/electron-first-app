@@ -1,4 +1,4 @@
-<h1 align="center">Electron</h1>
+<h1 align="center">Electron with React + Lightning Design System</h1>
 <p align="center">Trying out electron for the first time.</p>
 <p align="center">
   <img src= "/docs/images/screenshot.png" />
