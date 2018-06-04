@@ -11,95 +11,9 @@
     Chrome <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>. -->
     <div id="root"></div>
-    <script src="./node_modules/react/umd/react.development.js"></script>
+    <!-- <script src="./node_modules/react/umd/react.development.js"></script>
     <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
-    <script src="./node_modules/babel-standalone/babel.min.js"></script>
-    <script type="text/babel">
-
-      const OperationButton = ({
-        onClickEvent,
-        label
-      }) => (
-        <div>
-          <button onClick={onClickEvent}
-                  className="slds-button slds-button_brand"
-                  style={{
-                    width: 150,
-                    height: 50,
-                    margin: 5
-                  }}>
-            {label}
-          </button>
-        </div>
-      )
-
-      class Counter extends React.Component {
-        state = {
-          value: 0
-        }
-
-        _onIncrement() {
-          this.setState({
-            value: this.state.value + 1
-          })
-        }
-
-        _onDecrement() {
-          this.setState({
-            value: this.state.value - 1
-          })
-        }
-
-        componentDidMount() {
-          this.setState({
-            value: this.props.initialValue
-          })
-        }
-
-        render() {
-          const { value } = this.state
-          
-          return (
-            <div style={{ display: 'inline-block' }}>
-              <OperationButton onClickEvent={this._onIncrement.bind(this)} label="Increment" />
-              <h1 className="slds-text-heading--large">{value}</h1>
-              <OperationButton onClickEvent={this._onDecrement.bind(this)} label="Decrement" />
-            </div>
-          )
-        }
-      }
-
-      class App extends React.Component {
-        state = {
-          initialValues: {
-            one: 1,
-            two: 2,
-            three: 3
-          }
-        }
-
-        render() {
-          const { initialValues } = this.state
-          return (
-            <div style={{ textAlign: 'center' }}>
-              <h1 className="slds-text-heading--large slds-p-top_large">
-                This is an Electron Desktop App with an<br/>
-                Embedded React counter component<br/>
-                using Salesforce Lightning Design System<br/>
-              </h1>
-              <div className="slds-p-top_large"></div>
-              <Counter initialValue={initialValues.one} />
-              <Counter initialValue={initialValues.two} />
-              <Counter initialValue={initialValues.three} />
-            </div>
-          )
-        }
-      }
-
-      ReactDOM.render(
-        <App />,
-        document.getElementById('root')
-      )
-    </script>
+    <script src="./node_modules/babel-standalone/babel.min.js"></script> -->
+    <script src="./build/App.bundle.js"></script>
   </body>
 </html>
