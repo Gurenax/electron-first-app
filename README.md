@@ -10,6 +10,7 @@
 - Replaced the Hello World texts and embedded a React App on index.html
 - Used salesforce lightning design system for the styling
 - Created a webpack bundle for React then embedded the bundle to index.html
+- Made the Counters draggable
 
 ## Build and run the App
 ```
