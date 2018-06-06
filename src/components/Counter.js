@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import OperationButton from './OperationButton'
+import Draggable from 'react-draggable'
 
 class Counter extends Component {
   state = {
@@ -28,11 +29,13 @@ class Counter extends Component {
     const { value } = this.state
     
     return (
+      <Draggable>
       <div style={{ display: 'inline-block' }}>
         <OperationButton onClickEvent={this._onIncrement.bind(this)} label="Increment" />
         <h1 className="slds-text-heading--large">{value}</h1>
         <OperationButton onClickEvent={this._onDecrement.bind(this)} label="Decrement" />
       </div>
+      </Draggable>
     )
   }
 }
